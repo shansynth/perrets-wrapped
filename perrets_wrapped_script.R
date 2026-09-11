@@ -8,8 +8,10 @@ con <- dbConnect(RSQLite::SQLite(), "~/HealthData/DBs/garmin_activities.db")
 
 dbListTables(con) #view what is actually inside said file
 
-dbListFields(con, "files")
+dbListFields(con, "activities")
 
-walks <- dbReadTable(con, "files_view")
+walks <- dbReadTable(con, "walking_activities_view")
+
+#will want to join onto avtivities for ascent and descent
 
 dbDisconnect(con)
